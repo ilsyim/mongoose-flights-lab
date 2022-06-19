@@ -5,12 +5,11 @@ const Schema = mongoose.Schema
 const flightSchema = new Schema({
   airline: {
     type: String,
-    enum: ['American', 'Southwest', 'United']
+    enum: ['American', 'Southwest', 'United' ]
   },
   airport: {
     type: String,
-    enum: ['AUS', 'DEN', 'DFW', 'LAX', 'SAN'],
-    default: 'DEN'
+    enum: ['AUS', 'DEN', 'DFW', 'LAX', 'SAN' ],
   },
   flightNo: {
     type: Number,
@@ -23,9 +22,15 @@ const flightSchema = new Schema({
     // date set to a year from now, !! come back !!
     default: function() {
       const today = new Date()
-      return today(today.setFullYear(today.getFullYear() + 1))
+      const year = today.getFullYear()
+      const month = today.getMonth()
+      const day = today.getDate()
+      const result = new Date(year + 1, month, day)
+      return result
     }
-  },
+  }, 
+}, {
+  timestamps: true
 })
 
 const Flight = mongoose.model('Flight', flightSchema)
