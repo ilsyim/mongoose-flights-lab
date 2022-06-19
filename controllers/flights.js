@@ -2,8 +2,13 @@ import { Flight } from '../models/flight.js'
 
 
 function newFlight(req, res) {
+  const departsDate = function() {
+    const today = new Date()
+    return today(today.setFullYear(today.getFullYear() + 1))
+  }
   res.render('flights/new', {
-    title: 'ADD FLIGHT'
+    title: 'ADD FLIGHT',
+    departsDate
   })
 }
 
