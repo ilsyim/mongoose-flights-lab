@@ -66,10 +66,46 @@ function show(req, res) {
   })
 }
 
+function edit (req, res) {
+  const departsDate = function() {
+    const today = new Date()
+    const year = today.getFullYear()
+    const month = today.getMonth()
+    const day = today.getDate()
+    const result = new Date(year + 1, month, day)
+    return result
+  }
+  Flight.findById(req.params.id)
+  .then(flight => {
+    res.render('flights/edit', {
+      flight: flight,
+      title: 'EDIT FLIGHT',
+      departsDate
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/fruits')
+  })
+}
+
+function update (req,res) {
+  Flight.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .then(flight => {
+    res.redirect(`/flights/${flight._id}`)
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/fruits')
+  })
+}
+
 export {
   newFlight as new,
   create,
   index,
   deleteFlight as delete,
   show,
+  edit,
+  update
 }

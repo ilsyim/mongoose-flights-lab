@@ -1,3 +1,7 @@
+h1 {
+  font-family: 'Sarabun', sans-serif;
+}
+
 table {
   font-size: 20px;
 }
@@ -5,6 +9,7 @@ table {
 table thead th {
   padding: 5px;
   border-bottom: 2px solid #424748;
+  font-family: 'Sarabun', sans-serif;
 }
 
 table td {

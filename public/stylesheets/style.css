@@ -4,11 +4,45 @@ body {
   background-color: #243B4A;
   text-shadow: 2px 2px 2px #4E4D5C;
   color: #FCF7FF;
+  
 }
 
+body > nav {
+grid-area: nav;
+display: flex;
+justify-content: flex-end;
+}
+h1 {
+  justify-content: center;
+  align-items: center;
+  display: grid;
+}
 a {
   color: #F6AE2D;
 }
 a:hover {
   color: #4E4D5C;
+}
+
+.fas::before {
+  font-family: "Font Awesome 5 Free";
+}
+
+h1 {
+  height: 200px;
+  display: flex;
+}
+
+h2 {
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  font-size: 24px;
+}
+
+p {
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  font-size: 20px;
 }
