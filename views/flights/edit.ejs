@@ -25,9 +25,10 @@
   <input type="text" name="flightNo" id="flight-number-input" required>
   
   <label for="departs-input">Departs</label>
-  <input type="datetime-local" name="departs" id="departs-input" value="<%= departsDate %> ">
+  <input type="datetime-local" name="departs" id="departs-input" value="<%= departsDate %>">
 
-  <button type="submit">Save Flight</button>
+<a class="cancel" href="/flights/<%= flight._id%>">Cancel</a>
+  <button class="edit" type="submit">Save Flight</button>
 </form>
 
 <%- include('../partials/footer') %> 

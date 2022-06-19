@@ -11,6 +11,18 @@ html {
   box-sizing: inherit;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Sarabun', sans-serif;
 }
+
+body {
+  align-items: center;
+  justify-content: center;
+
+}
+
+h1 {
+  font-family: 'Sarabun', sans-serif;
+
+}
+
 form {
   display: grid;
   grid-gap: 10px;
@@ -29,4 +41,13 @@ form > button {
   width: 160px;
   margin-left: auto;
   font-size: 22px;
+}
+
+label {
+  font-size: 24px;
+}
+
+.cancel{
+  font-size: 26px;
+  text-decoration: none;
 }

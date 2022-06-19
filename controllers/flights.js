@@ -11,7 +11,7 @@ function newFlight(req, res) {
     return result
   }
   res.render('flights/new', {
-    title: 'ADD FLIGHT',
+    title: 'Add Flight',
     departsDate
   })
 }
@@ -32,7 +32,7 @@ function index(req, res) {
   .then(flights => {
     res.render('flights/index', {
       flights: flights,
-      title: 'ALL FLIGHTS'
+      title: 'All Flights'
     })
   })
   .catch(error => {
@@ -79,7 +79,7 @@ function edit (req, res) {
   .then(flight => {
     res.render('flights/edit', {
       flight: flight,
-      title: 'EDIT FLIGHT',
+      title: 'Edit Flight',
       departsDate
     })
   })
