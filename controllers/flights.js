@@ -35,10 +35,41 @@ function index(req, res) {
       title: 'ALL FLIGHTS'
     })
   })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
+
+function deleteFlight(req, res) {
+  Flight.findByIdAndDelete(req.params.id)
+  .then(flight => {
+    res.redirect('/flights')
+  })
+  .catch(error =>{
+    console.log(error)
+    res.redirect('/flights')
+  })
+}
+
+function show(req, res) {
+  Flight.findById(req.params.id)
+  .then(flight => {
+    res.render('flights/show', {
+      flight: flight,
+      title: 'Your Flight'
+    })
+  })
+  .catch(error =>{
+    console.log(error)
+    res.redirect('/flights')
+  })
 }
 
 export {
   newFlight as new,
   create,
   index,
+  deleteFlight as delete,
+  show,
 }
