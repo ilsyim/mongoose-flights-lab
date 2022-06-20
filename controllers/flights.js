@@ -2,17 +2,13 @@ import { Flight } from '../models/flight.js'
 
 
 function newFlight(req, res) {
-  const departsDate = function() {
-    const today = new Date()
-    const year = today.getFullYear()
-    const month = today.getMonth()
-    const day = today.getDate()
-    const result = new Date(year + 1, month, day)
-    return result
-  }
+  const newFlight = new Flight()
+  console.log('New Flight:', newFlight)
+  const defaultDate = newFlight.departs
+  const formattedDate = defaultDate.toISOString().slice(0,16)
   res.render('flights/new', {
     title: 'Add Flight',
-    departsDate
+    departsDate: formattedDate
   })
 }
 
