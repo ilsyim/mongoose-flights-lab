@@ -1,0 +1,81 @@
+html {
+  box-sizing: border-box
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after { /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default
+     but can be over-ridden as needed */
+  box-sizing: inherit;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Sarabun', sans-serif;
+}
+
+body {
+  background-color: #243B4A;
+  /* Use a system font, if none are available use an available sans-sarif font */
+  margin: 0;
+  color: #FCF7FF;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas:
+    "nav"
+    "main";
+  font-size: 18px;
+}
+
+body > main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #243B4A;
+  padding: 20px;
+}
+
+body > main h1:first-child {
+  margin-bottom: 50px;
+}
+
+body > nav {
+  grid-area: nav;
+  background-color: #F6AE2D;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 30px;
+}
+
+h1 {
+  font-family: 'Sarabun', sans-serif;
+}
+
+nav > i {
+  width: 34px;
+  object-fit: contain;
+  margin-right: auto;
+}
+
+nav > a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: #708B75;
+}
+
+nav > a:hover {
+  color: white;
+  background-color: #708B75;
+}
+
+nav > a.active {
+  color: white;
+}
+
+.fas::before {
+  font-family: "Font Awesome 5 Free";
+}
+

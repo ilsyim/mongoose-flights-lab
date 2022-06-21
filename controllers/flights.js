@@ -63,20 +63,16 @@ function show(req, res) {
 }
 
 function edit (req, res) {
-  const departsDate = function() {
-    const today = new Date()
-    const year = today.getFullYear()
-    const month = today.getMonth()
-    const day = today.getDate()
-    const result = new Date(year + 1, month, day)
-    return result
-  }
+  const editFlight = new Flight()
+  console.log('Edit Flight:', newFlight)
+  const defaultDate = editFlight.departs
+  const formattedDate = defaultDate.toISOString().slice(0,16)
   Flight.findById(req.params.id)
   .then(flight => {
     res.render('flights/edit', {
       flight: flight,
       title: 'Edit Flight',
-      departsDate
+      departsDate: formattedDate
     })
   })
   .catch(error => {

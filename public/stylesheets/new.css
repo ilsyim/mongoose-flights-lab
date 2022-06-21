@@ -12,15 +12,20 @@ html {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Sarabun', sans-serif;
 }
 
-body {
+body > main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-
+  background-color: #243B4A;
+  padding: 20px;
 }
 
 h1 {
   font-family: 'Sarabun', sans-serif;
-
+  justify-content: center;
+  align-items: center;
+  display: grid;
 }
 
 form {
@@ -50,4 +55,25 @@ label {
 .cancel{
   font-size: 26px;
   text-decoration: none;
+}
+
+nav > a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+a {
+  color: #f6ae2d;
+}
+
+a:hover {
+  color: white;
+  background-color: #708B75;
+}
+
+a.active {
+  color: white;
 }
