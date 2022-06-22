@@ -2,11 +2,35 @@
 <link rel="stylesheet" href="/stylesheets/style.css" />
 <%- include('../partials/nav') %>
 
-<h1>Your Flight</h1>
+<main>
+  <h1><%= title %></h1>
+  <section> 
+    <div>Flight: </div>
+    <div>
+    <%= flight.flightNo%>
+      <a href="/flights/<%= flight._id %>/edit">Edit</a>
+    </div>
+    <div>Airline:</div>
+    <div><%= flight.airline %></div>
 
-  <p>Flight #<%= flight.flightNo %> departs on <%= flight.departs %> from <%= flight.airport %>. You're using <%= flight.airline %> Airlines.
-  </p>
-<p><a href="/flights/<%= flight._id %>/edit">Edit</a></p>
-</article>
+    <div>Airport:</div>
+    <div><%= flight.airport %></div>
+
+    <div>Flight Number:</div>
+    <div><%= flight.flightNo %></div>
+
+    <div>Departs</div>
+    <div><%= flight.departs %></div>
+
+  </section>
+    <h2>Tickets</h2>
+    <form id="add-ticket-form" action="/flights/<%= flight._id %>/tickets" method="POST">
+    <label for="seat-textarea">Seat Number</label>
+    <textarea name="seat" id="seat-textarea"></textarea>
+    <input name="seat" required pattern="[A-F][1-9]\d?">
+    <label for="price">Price</label>
+    <input name="price">
+  </form>
+</main>
 
 <%- include('../partials/footer') %> 
