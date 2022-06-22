@@ -108,11 +108,24 @@ function createTicket(req, res) {
 }
 
 function deleteTicket(req, res) {
+  console.log('FLIGHT ID', req.params.id)
+  console.log('TICKET ID', req.params.ticketId)
   Flight.findById(req.params.id)
   .then(flight => {
-    flight.tickets._id.remove()
+      Flight.findById(req.params.ticketId)
+      .then(() => {
+        //to find & use the ticket's id, use req.params.ticketId
+        const ticketId = req.params.ticketId
+        flight.tickets.remove({_id: ticketId})
+        flight.save()
+        res.redirect(`/flights/${flight._id}`)
+      })
   })
 }
+
+// function addMeal(req, res) {
+
+// }
 
 export {
   newFlight as new,
@@ -123,5 +136,6 @@ export {
   edit,
   update,
   createTicket,
-  deleteTicket
+  deleteTicket,
+  // addMeal
 }
