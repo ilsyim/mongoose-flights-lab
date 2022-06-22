@@ -25,12 +25,12 @@
   </section>
     <h2>Tickets</h2>
     <form id="add-ticket-form" action="/flights/<%= flight._id %>/tickets" method="POST">
-    <label for="seat-textarea">Seat Number</label>
-    <input name="seat" required pattern="[A-F][1-9]\d?">
-    <label for="price">Price</label>
-    <input name="price">
-    <button>Add Ticket</button>
-  </form>
+      <label for="seat-textarea">Seat Number</label>
+      <input name="seat" required pattern="[A-F][1-9]\d?">
+      <label for="price">Price</label>
+      <input name="price">
+      <button>Add Ticket</button>
+    </form>
 
 <% if (flight.tickets.length) { %> 
   <table>
