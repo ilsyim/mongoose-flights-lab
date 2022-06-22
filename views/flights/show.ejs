@@ -43,6 +43,11 @@
     <tbody>
       <% flight.tickets.forEach(ticket => { %> 
         <tr>
+          <td>
+            <form action="/flights/<%= flight._id %>/tickets/<%= ticket._id %>" class="delete-form" method="POST">
+              <button>X</button>
+            </form>
+          </td>
           <td><%= ticket.createdAt.toLocaleDateString() %></td>
           <td><%= ticket.seat %></td>
           <td><%= ticket.price %></td>

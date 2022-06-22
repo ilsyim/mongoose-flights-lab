@@ -107,6 +107,13 @@ function createTicket(req, res) {
   })
 }
 
+function deleteTicket(req, res) {
+  Flight.findById(req.params.id)
+  .then(flight => {
+    flight.tickets._id.remove()
+  })
+}
+
 export {
   newFlight as new,
   create,
@@ -116,4 +123,5 @@ export {
   edit,
   update,
   createTicket,
+  deleteTicket
 }
