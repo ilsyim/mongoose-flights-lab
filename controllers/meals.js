@@ -16,7 +16,14 @@ function create(req, res) {
   .then(meal => {
     res.redirect('/meals/new')
   })
+  .catch(error => {
+
+    console.log(error)
+    res.redirect('/meals/new')
+  })
 }
+
+//findOne for a meal already entered?
 
 export {
   newMeal as new,

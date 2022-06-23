@@ -66,6 +66,10 @@ nav > a {
   color: #708B75;
 }
 
+nav > a:visited {
+  color: #708B75;
+}
+
 nav > a:hover {
   color: white;
   background-color: #708B75;

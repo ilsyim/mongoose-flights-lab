@@ -110,5 +110,24 @@ button:hover {
 
 .delete-form button:hover {
   background-color: #708B75;
-  color: red;
+}
+
+table {
+  font-size: 20px;
+}
+
+table thead th {
+  padding: 5px;
+  border-bottom: 3px solid #F6AE2D;
+  font-family: 'Sarabun', sans-serif;
+}
+
+table td {
+  padding: 10px;
+  text-align: center;
+}
+
+#list td:nth-child(2),
+#list td:nth-child(3) {
+  min-width: 100px;
 }
