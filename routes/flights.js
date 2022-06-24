@@ -24,6 +24,8 @@ router.delete('/:id', flightsCtrl.delete)
 
 router.delete('/:id/tickets/:ticketId', flightsCtrl.deleteTicket)
 
+router.delete('/:flightId/meals/:mealId', flightsCtrl.deleteMeal)
+
 router.put('/:id', flightsCtrl.update)
 
 export {
